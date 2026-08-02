@@ -1,0 +1,9 @@
+.search-shell { display: grid; gap: 1rem; padding: 1.3rem; border-radius: 28px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(20px); }
+.search-shell .input-group { display: flex; gap: .8rem; flex-wrap: wrap; }
+.input-group input, .input-group select, .input-group textarea { width: 100%; border: 1px solid rgba(148, 163, 184, 0.32); padding: 0.95rem 1rem; border-radius: 16px; background: rgba(255,255,255,0.95); color: var(--text); }
+body.dark .input-group input, body.dark .input-group select, body.dark .input-group textarea { background: rgba(15,23,42,.95); color: #f8fafc; }
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus { outline: 2px solid rgba(96,165,250,.35); border-color: var(--primary-3); }
+.form-grid { display: grid; gap: 1rem; }
+.form-grid .grid-2 { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.stat-list { display: grid; gap: 1rem; grid-template-columns: repeat(4, minmax(120px,1fr)); }
+.stat-list .stat-card { text-align: center; }

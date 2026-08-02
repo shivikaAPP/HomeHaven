@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeHaven | Premium Real Estate Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="navbar">
+        <div class="container nav-wrap">
+          <a href="index.html" class="brand">HomeHaven</a>
+          <nav class="nav-links">
+            <div class="dropdown">
+              <a href="listings.html">Explore</a>
+              <div class="dropdown-panel">
+                <a href="categories.html">All Categories</a>
+                <a href="category.html?slug=apartment">Apartments</a>
+                <a href="category.html?slug=villa">Villas</a>
+                <a href="category.html?slug=penthouse">Penthouse</a>
+              </div>
+            </div>
+            <a href="#properties">Featured</a>
+            <a href="#reviews">Reviews</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="admin.html">Admin</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="btn btn-outline btn-small ripple" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+            <button class="btn btn-primary btn-small ripple" id="authButton">Login</button>
+            <button class="btn btn-outline btn-small ripple" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+          </div>
+        </div>
+        <div class="container mobile-nav hidden" id="mobileNav">
+          <a href="listings.html">Explore</a>
+          <a href="categories.html">Categories</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="container hero-content">
+            <div class="fade-slow">
+              <p class="eyebrow"><i class="fa-solid fa-house"></i> Premium lifestyle, redefined</p>
+              <h1 class="hero-title">Find homes that feel as exceptional as your life.</h1>
+              <p style="font-size:1.05rem; max-width:640px; margin-bottom:1.5rem; color: rgba(255,255,255,.9);">Luxury apartments, smart homes, and investment-grade properties curated for modern buyers and renters.</p>
+              <div class="hero-actions">
+                <a href="listings.html" class="btn btn-primary ripple">Explore Listings</a>
+                <a href="categories.html" class="btn btn-secondary ripple">Browse Categories</a>
+              </div>
+            </div>
+            <div class="hero-visual hero-float glass">
+              <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80" alt="Luxury home" />
+              <div class="search-shell" style="position:absolute; inset:auto 1rem 1rem 1rem;">
+                <form id="searchForm" class="input-group">
+                  <input type="text" id="searchInput" placeholder="Search by city, address, or property" />
+                  <button class="btn btn-primary ripple" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow"><i class="fa-solid fa-chart-line"></i> Statistics</p>
+                <h2>Trusted by buyers, investors, and renters</h2>
+              </div>
+            </div>
+            <div class="stat-list">
+              <div class="stat-card reveal"><h3>120+</h3><p>Luxury homes</p></div>
+              <div class="stat-card reveal"><h3>12</h3><p>Categories</p></div>
+              <div class="stat-card reveal"><h3>98%</h3><p>Happy clients</p></div>
+              <div class="stat-card reveal"><h3>24/7</h3><p>Support</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="categories" class="section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> Categories</p>
+                <h2>Browse by lifestyle</h2>
+              </div>
+              <a href="categories.html" class="btn btn-outline btn-small ripple">View all</a>
+            </div>
+            <div id="categoryGrid" class="category-grid"></div>
+          </div>
+        </section>
+
+        <section id="properties" class="section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow"><i class="fa-solid fa-star"></i> Featured homes</p>
+                <h2>Highly sought-after properties</h2>
+              </div>
+              <a href="listings.html" class="btn btn-outline btn-small ripple">See all</a>
+            </div>
+            <div id="featuredProperties" class="property-grid"></div>
+          </div>
+        </section>
+
+        <section id="reviews" class="section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow"><i class="fa-solid fa-quote-left"></i> Client stories</p>
+                <h2>What our clients say</h2>
+              </div>
+            </div>
+            <div class="property-grid">
+              <article class="dashboard-card reveal"><p>“The experience felt premium from the first click. We found our dream home in just two days.”</p><strong>— Sofia & Daniel</strong></article>
+              <article class="dashboard-card reveal"><p>“Beautiful listings, smooth booking experience, and excellent support during the entire process.”</p><strong>— Priya N.</strong></article>
+              <article class="dashboard-card reveal"><p>“Every property page felt polished and informative. It made our decision simple.”</p><strong>— Marcus T.</strong></article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div id="modal" class="modal hidden">
+        <div class="modal-card">
+          <button class="close-btn" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+          <div id="modalBody"></div>
+        </div>
+      </div>
+
+      <div id="loadingScreen" class="loading-screen hidden"><div class="spinner"></div></div>
+      <div id="compareBar" class="compare-bar"></div>
+
+      <footer class="footer">
+        <div class="container footer-grid">
+          <div>
+            <h3>HomeHaven</h3>
+            <p>Premium real estate experiences designed for modern living.</p>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="listings.html">Listings</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:hello@homehaven.com">hello@homehaven.com</a></li>
+              <li><a href="tel:+15550100">+1 (555) 0100</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+  </body>
+</html>

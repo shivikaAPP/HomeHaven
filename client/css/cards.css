@@ -1,0 +1,27 @@
+.property-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.property-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.property-card:hover { transform: translateY(-4px); box-shadow: 0 25px 55px rgba(15,23,42,.16); }
+body.dark .property-card { background: rgba(15,23,42,0.85); }
+.property-media { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.property-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.property-card:hover .property-media img { transform: scale(1.05); }
+.property-body { padding: 1rem 1rem 1.15rem; }
+.property-title { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 700; margin: .25rem 0 .5rem; }
+.price-tag { color: var(--primary-2); font-weight: 800; font-size: 1.1rem; }
+.property-meta { display: flex; flex-wrap: wrap; gap: .6rem; color: var(--muted); font-size: .9rem; margin-top: .7rem; }
+body.dark .property-meta { color: #cbd5e1; }
+.favorite-btn { position: absolute; top: .8rem; right: .8rem; width: 42px; height: 42px; border: 0; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.92); color: var(--primary); cursor: pointer; box-shadow: 0 10px 25px rgba(2,6,23,.14); z-index: 2; }
+.favorite-btn.active { color: #ef4444; }
+.ribbon { position: absolute; top: 1rem; left: 1rem; z-index: 2; background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; padding: .38rem .7rem; border-radius: 999px; font-size: .78rem; font-weight: 700; }
+.category-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.category-card { display: flex; flex-direction: column; padding: 1.2rem; border-radius: 24px; min-height: 160px; justify-content: end; background: linear-gradient(135deg, rgba(30,58,138,.9), rgba(37,99,235,.8)); color: white; box-shadow: var(--shadow); transition: transform .25s ease; }
+.category-card:hover { transform: translateY(-4px); }
+.category-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: rgba(255,255,255,.16); margin-bottom: 1rem; }

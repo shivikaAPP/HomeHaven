@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category | HomeHaven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="navbar">
+        <div class="container nav-wrap">
+          <a href="index.html" class="brand">HomeHaven</a>
+          <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="listings.html">Listings</a>
+            <a href="categories.html">Categories</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="admin.html">Admin</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="btn btn-outline btn-small ripple" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+            <button class="btn btn-primary btn-small ripple" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+          </div>
+        </div>
+        <div class="container mobile-nav hidden" id="mobileNav">
+          <a href="index.html">Home</a>
+          <a href="listings.html">Listings</a>
+          <a href="categories.html">Categories</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </header>
+
+      <main class="container section">
+        <div class="page-hero">
+          <p class="eyebrow"><i class="fa-solid fa-building"></i> Category</p>
+          <h2 id="pageTitle" class="page-title">Category</h2>
+          <p id="pageMeta" class="page-meta">Explore curated listings in this category.</p>
+        </div>
+        <div id="categoryProperties" class="property-grid"></div>
+      </main>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+  </body>
+</html>

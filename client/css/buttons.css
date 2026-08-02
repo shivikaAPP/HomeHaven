@@ -1,0 +1,23 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .85rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  transition: transform .24s ease, box-shadow .24s ease, background .24s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%); color: white; box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25); }
+.btn-secondary { background: rgba(255,255,255,0.14); color: white; border: 1px solid rgba(255,255,255,.25); }
+.btn-outline { background: white; color: var(--primary); border: 1px solid rgba(30,58,138,.14); }
+.btn-ghost { background: transparent; color: var(--primary-2); padding-inline: .35rem; }
+.btn-small { padding: .55rem .85rem; font-size: .9rem; }
+.btn-icon { width: 42px; height: 42px; padding: 0; border-radius: 50%; }
+.ripple { position: relative; overflow: hidden; }
+.ripple::after { content:''; position:absolute; inset:0; background:rgba(255,255,255,.25); transform:scale(0); border-radius:50%; opacity:0; }
+.ripple:active::after { animation:ripple .55s linear; }
+@keyframes ripple { from { transform:scale(0); opacity:.55; } to { transform:scale(3); opacity:0; } }

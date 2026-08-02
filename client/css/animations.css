@@ -1,0 +1,9 @@
+.reveal { opacity: 0; transform: translateY(24px); transition: all .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.hero-float { animation: float 4s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+.fade-slow { animation: fade 1.2s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.skeleton { position: relative; overflow: hidden; background: linear-gradient(90deg, rgba(226,232,240,.45), rgba(255,255,255,.72), rgba(226,232,240,.45)); background-size: 200% 100%; animation: shimmer 1.2s infinite linear; border-radius: 16px; min-height: 220px; }
+body.dark .skeleton { background: linear-gradient(90deg, rgba(30,41,59,.45), rgba(51,65,85,.7), rgba(30,41,59,.45)); background-size: 220% 100%; }
+@keyframes shimmer { 100% { background-position: -200% 0; } }
