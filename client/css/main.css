@@ -9,7 +9,7 @@
 @import url('pages.css');
 
 :root {
-  --primary: #1E3A8A;
+  --primary: #071d5b;
   --primary-2: #2563EB;
   --primary-3: #3B82F6;
   --primary-4: #60A5FA;
@@ -76,3 +76,22 @@ body.dark .stat-card { background: rgba(15,23,42,.85); }
 .empty-state { padding: 2rem; border-radius: 24px; text-align: center; background: rgba(255,255,255,0.7); border: 1px dashed var(--border); }
 body.dark .empty-state { background: rgba(15,23,42,.85); }
 @keyframes spin { to { transform: rotate(360deg); } }
+/* Fix Hero Search */
+.search-shell {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.search-shell form,
+.search-shell input,
+.search-shell button {
+    pointer-events: auto;
+}
+
+.hero-visual::after {
+    pointer-events: none;
+}
