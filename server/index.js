@@ -2,31 +2,29 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-const dotenv = require('dotenv');
-const multer = require('multer');
 const fs = require('fs');
+const multer = require('multer');
 
+const uploadDir = path.join(__dirname, '..', 'uploads');
+const dotenv = require('dotenv');
 dotenv.config();
-
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
 const app = express();
 const PORT = process.env.PORT || 5001;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const uploadDir = path.join(__dirname, '..', 'uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, uploadDir),
   filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`)
 });
-const upload = multer({ storage });
-app.use('/uploads', express.static(uploadDir));
 
+const upload = multer({ storage });
+
+app.use('/uploads', express.static(uploadDir));
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
 const User = require('./models/User');
@@ -62,7 +60,12 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
   if (!req.file) return res.status(400).json({ message: 'No image uploaded' });
   res.json({ imageUrl: `/uploads/${req.file.filename}` });
 });
-
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: "HomeHaven API is running"
+  });
+});
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
 });
